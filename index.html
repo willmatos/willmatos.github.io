@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>William Matos - Resume</title>
+
+		<link rel="stylesheet" href="content/css/lib/foundation.css" type="text/css">
+		<!--<link rel="stylesheet" href="content/css/lib/normalize.css" type="text/css">-->
+		<link rel="stylesheet" href="content/css/resume.css" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis:400,700|Source+Code+Pro|Titillium+Web:400,700,600|Raleway:400,700|Play:400,700' rel='stylesheet' type='text/css'>
+
+
+		<script src="content/js/lib/jQuery.js"></script>
+		<script src="content/js/lib/knockout-2.3.0.js"></script>
+		<script src="content/js/lib/knockout.mapping.js"></script>
+		<script src="content/js/resume.data.js"></script>
+		<script src="content/js/resume.helpers.js"></script>
+		<script src="content/js/resume.degree.js"></script>
+		<script src="content/js/resume.skill.js"></script>
+		<script src="content/js/resume.job.js"></script>
+		<script src="content/js/resume.js"></script>
+		<script src="content/js/lib/custom.modernizr.js"></script>
+		<!--<script src="content/js/lib/foundation.min.js"></script>-->
+	</head>
+	<body style="background-color:#efefef;">
+		<div id="resume" class="resume-container">
+			<div class="resume-header">
+				<div class="row">
+					<div class="columns large-4">
+						<h2 class="resume-header-name" data-bind="text: name"></h2>
+					</div>
+					<div class="columns large-8">
+						<h6 class="subheader" data-bind="text: addressText"></h6>
+						<h6 class="subheader">
+						(c) <a data-bind="text: cellPhoneNumberText, attr: {'href': cellPhoneNumberLink}"></a> | (e) <a data-bind="text: emailAddress, attr: {'href':emailAddressLink}"></a></h6>
+					</div>
+				</div>
+			</div>
+			<div class="resume-body">
+				<div class="row">
+					<div class="large-6 columns">
+						<div class="resume-section-container row">
+							<div class="resume-section large-12 columns">
+								<h5>EDUCATION</h5>
+								<div data-bind="foreach: degrees">
+									<h6 class="subheader" data-bind="text: degreeText"></h6>
+									<h6 class="subheader" data-bind="text: schoolText"></h6>
+								</div>
+							</div>
+						</div>
+						<!-- This will be the the last/current job... always the one with the most information -->
+						<div class="resume-section-container row" data-bind="with: jobs()[0]">
+							<div class="resume-section large-12 columns">
+								<h5 data-bind="text: tenure"></h5>
+								<h6 class="subheader" data-bind="text: companyInformation"></h6>
+								<h6 class="subheader" data-bind="text: jobTitle"></h6>
+								<ul class="resume-section-list circle" data-bind="foreach: highlights">
+									<li data-bind="text: note"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="large-6 columns">
+						<div class="resume-section-container row">
+							<div class="resume-section large-12 columns">
+								<h5>SKILLS</h5>
+								<h6 class="subheader" data-bind="foreach: skills">
+									<div class="resume-skill-description"  data-bind="text: description"></div>
+								</h6>
+							</div>
+						</div>
+						<!-- ko: 'if': jobs.length > 1 --> 
+						<span data-bind="foreach: jobs">
+							<div class="resume-section-container row" data-bind="visible: $parent.jobs()[0].jobId !== jobId">
+								<div class="resume-section large-12 columns">
+									<h5 data-bind="text: tenure"></h5>
+									<h6 class="subheader" data-bind="text: companyInformation"></h6>
+									<h6 class="subheader" data-bind="text: jobTitle"></h6>
+									<ul class="resume-section-list circle" data-bind="foreach: highlights">
+										<li data-bind="text: note"></li>
+									</ul>
+								</div>
+							</div>
+						</span>
+						<!-- /ko -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var vm = new ResumeViewModel();
+			var container = $("#resume")[0];
+			ko.applyBindings(vm, container);
+
+			// initialize
+			if(willsResume) {
+				vm.loadData(willsResume);
+			};
+		</script>
+	</body>
+</html>
+	
+

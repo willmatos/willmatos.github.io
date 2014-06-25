@@ -1,0 +1,80 @@
+@font-face {
+  	font-family: HelveticaNeueUltraLight;
+  	src: url('../fonts/helvetica_neue_ultralight.ttf'),
+     	 url('../fonts/helvetica_neue_ultralight.eot'); /* IE9 */
+}
+
+@font-face {
+	font-family: UbuntuTitlingBold;
+	src: url('../fonts/UbuntuTitlingBold.ttf'),
+		 url('../fonts/UbuntuTitling-Bold.eot'); /* IE9 */
+}
+
+#body {
+	/*font-family: HelveticaNeueUltraLight;*/
+}
+
+.resume-container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*.resume-container h1, .resume-container h2,  .resume-container h3,
+.resume-container h4, .resume-container h5,  .resume-container h6 {
+	font-family: "HelveticaNeueUltraLight";
+}*/
+.resume-body h5 {
+	font-family: "Titillium Web";
+	font-weight: bold;
+}
+
+.resume-header {
+	padding: 1em 1em 0em 1em;
+	border-bottom: solid 1px black;
+
+}
+
+.resume-header-name {
+	font-family: "Titillium Web";
+	font-weight: bold;
+}
+
+.resume-body {
+
+}
+
+.resume-section-container {
+	padding: 1em;
+}
+
+.resume-section {
+	background-color: #fff;
+	padding: 1em;
+}
+
+.resume-section-list {
+	margin-left: 1em;
+	/* font-family: "Play"; */
+}
+
+.resume-skill-description {
+	padding:0.5em; 
+	border:1px solid black; 
+	float:left; 
+	margin:0.25em;
+}
+
+#masthead {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	max-width: 70em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d9d9d9;
+	margin-bottom: 1.25em;
+	padding: 1.25em;
+	background: #f2f2f2;
+}
