@@ -3,11 +3,11 @@ var willsResume = {
 	firstName: "William",
 	lastName: "Matos",
 
-	streetAddress1: "404 Rio Grande St.",
-	streetAddress2: "Apt. 115",
+	streetAddress1: "1401 E 4th St.",
+	streetAddress2: "Unit 312",
 	city: "Austin",
 	state: "TX",
-	zip: "78701",
+	zip: "78702",
 	cellPhoneNumber: "7863687774",
 	emailAddress: "will.matos@gmail.com",
 
@@ -36,51 +36,98 @@ var willsResume = {
 			},
 			{
 				order:3,
-				description: 'Javascript',
-				link: ''
+				description: 'SASS',
+				link: 'http://sass-lang.com/'
 			},
 			{
 				order:4,
-				description: 'jQuery',
-				link: ''
+				description: 'Javascript',
+				link: 'http://www.w3schools.com/js/DEFAULT.asp'
 			},
 			{
 				order:5,
-				description: 'jQuery Mobile',
-				link: ''
+				description: 'jQuery',
+				link: 'http://jquery.com/'
 			},
 			{
 				order:6,
-				description: 'Knockout.js',
-				link: ''
+				description: 'jQuery Mobile',
+				link: 'http://jquerymobile.com/'
 			},
 			{
 				order:7,
-				description: 'Zurb Foundation',
-				link: ''
+				description: 'Ember.js',
+				link: 'http://emberjs.com/'
 			},
 			{
 				order:8,
-				description: 'VB',
-				link: ''
+				description: 'Knockout.js',
+				link: 'http://knockoutjs.com/'
 			},
 			{
 				order:9,
-				description: 'C#',
-				link: ''
-			},{
+				description: 'Bootstrap',
+				link: 'http://getbootstrap.com/'
+			},
+			{
 				order:10,
-				description: 'ASP.NET WinForms',
-				link: ''
+				description: 'Zurb Foundation',
+				link: 'http://foundation.zurb.com/'
 			},
 			{
 				order:11,
+				description: 'VB',
+				link: 'http://msdn.microsoft.com/en-us/library/2x7h1hfk.aspx'
+			},
+			{
+				order:12,
+				description: 'C#',
+				link: 'http://msdn.microsoft.com/en-us/library/kx37x362.aspx'
+			},
+			{
+				order:12,
+				description: 'Node.js',
+				link: 'http://nodejs.org/'
+			},
+			{
+				order:13,
+				description: 'ASP.NET WinForms',
+				link: 'http://www.asp.net/'
+			},
+			{
+				order:14,
 				description: 'ASP.NET MVC',
-				link: ''
+				link: 'http://www.asp.net/'
 			}
 		],
 	jobs: 
 		[
+			{
+				startYear:"2013",
+				endYear:"2014",
+				company:"Compass Learning",
+				city:"Austin",
+				state:"TX",
+				jobTitle:"Front End Web Developer (Contractor)",
+				highlights: [
+					{
+						order:1,
+						note: "Worked on a development team that consisted of 5-10 developers, QA engineers and a designer that adhered to scrum and agile methodologies while implementing a cloud based architecture in Ember.js, Node.js and MongoDB using AWS."
+					},
+					{
+						order:2,
+						note: "Baked off for the engineering department multiple front end frameworks mainly AngularJS and Ember.js to demonstrate the pros and cons of each before choosing to implement one for Compass' new front end architecture."
+					},
+					{
+						order:3,
+						note: "With another front end developer was responsible for leading the implementation, flushing out and building up of our front end architecture in Ember.js for a media content management web application that would be responsible for creating, editing and previewing over 17,000 learning activities grouped into lessons for Compass Learning's Odyssey educational software."
+					},
+					{
+						order:4,
+						note: "The following technologies were also used in the building of our application: Github, Mongoose, Node Inspector, RequireJS, Grunt, SASS, HTML5, Bootstrap, Handlebars.js and Dropzone.js."
+					}							
+				]
+			},
 			{
 				startYear:"2008",
 				endYear:"2013",

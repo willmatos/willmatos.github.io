@@ -48,29 +48,33 @@
 							</div>
 						</div>
 						<!-- This will be the the last/current job... always the one with the most information -->
-						<div class="resume-section-container row" data-bind="with: jobs()[0]">
-							<div class="resume-section large-12 columns">
-								<h5 data-bind="text: tenure"></h5>
-								<h6 class="subheader" data-bind="text: companyInformation"></h6>
-								<h6 class="subheader" data-bind="text: jobTitle"></h6>
-								<ul class="resume-section-list circle" data-bind="foreach: highlights">
-									<li data-bind="text: note"></li>
-								</ul>
+						<!-- ko: 'if': jobs.length > 1 --> 
+						<span data-bind="foreach: jobs">
+							<div class="resume-section-container row" data-bind="visible: listOne($index)">
+								<div class="resume-section large-12 columns">
+									<h5 data-bind="text: tenure"></h5>
+									<h6 class="subheader" data-bind="text: companyInformation"></h6>
+									<h6 class="subheader" data-bind="text: jobTitle"></h6>
+									<ul class="resume-section-list circle" data-bind="foreach: highlights">
+										<li data-bind="text: note"></li>
+									</ul>
+								</div>
 							</div>
-						</div>
+						</span>
+						<!-- /ko -->
 					</div>
 					<div class="large-6 columns">
 						<div class="resume-section-container row">
 							<div class="resume-section large-12 columns">
 								<h5>SKILLS</h5>
 								<h6 class="subheader" data-bind="foreach: skills">
-									<div class="resume-skill-description"  data-bind="text: description"></div>
+									<div class="resume-skill-description"><a data-bind="attr: { href: link }, text: description"></a></div>
 								</h6>
 							</div>
 						</div>
 						<!-- ko: 'if': jobs.length > 1 --> 
 						<span data-bind="foreach: jobs">
-							<div class="resume-section-container row" data-bind="visible: $parent.jobs()[0].jobId !== jobId">
+							<div class="resume-section-container row" data-bind="visible: listTwo($index)">
 								<div class="resume-section large-12 columns">
 									<h5 data-bind="text: tenure"></h5>
 									<h6 class="subheader" data-bind="text: companyInformation"></h6>

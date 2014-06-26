@@ -57,7 +57,7 @@ var ResumeViewModel = function() {
 	});
 	self.emailAddressLink = ko.computed(function(){
 		return 'mailto:' + self.emailAddress();
-	})
+	});
 
 	// Education Information
 	self.degrees = ko.observableArray(null);//new DegreeViewModel()
@@ -67,6 +67,12 @@ var ResumeViewModel = function() {
 
 	// Experience Information
 	self.jobs = ko.observableArray(null);//new JobViewModel()
+	self.jobsList1 = self.jobs.filter(function(index) {
+		return (index % 2 === 0);
+	});
+	self.jobsList2 = self.jobs.filter(function(index) {
+		return (index % 2 === 1);
+	});
 
 	// Load the data
 	self.loadData = function(data) {
