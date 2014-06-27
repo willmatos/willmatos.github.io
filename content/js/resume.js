@@ -114,6 +114,7 @@ var ResumeViewModel = function() {
 
 					if (skill.order) { svm.order(skill.order); }
 					if (skill.description) { svm.description(skill.description); }
+					if (skill.link) { svm.link(skill.link); }
 
 					self.skills.push(svm);
 				});
